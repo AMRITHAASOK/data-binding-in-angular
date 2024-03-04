@@ -1,0 +1,20 @@
+<h3>Test Component</h3>
+
+<h2>Student Details</h2>
+Student Name: {{studentName}}
+<img [src]="studentUrl" width="200px" alt="{{studentName}}">
+
+<button (click)="addStudent()">Add</button>
+
+<input #user (change)="getStudentName($event)" type="text" placeholder="Enter Student name">
+<button type="submit" (click)="username(user)">Submit</button>
+<br><br>
+<form (ngSubmit)="studentDetails()">
+    <input name="studentAddr" [(ngModel)]="studentAddr" type="text" placeholder="Enter the address">
+    <br>
+    <input name="studentph" [(ngModel)]="studentph" type="text" placeholder="enter the phone number">
+    <br>
+    <input name="studentemail" [(ngModel)]="studentemail"  type="text" placeholder="Enter email address">
+    <br>
+    <input type="text" type="submit" value="Submit">
+</form>

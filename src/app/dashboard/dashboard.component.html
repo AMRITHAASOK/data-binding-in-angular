@@ -1,0 +1,34 @@
+<div class="container m-5 p-5 bg-info">
+    <h3>Email: {{dbemail}}</h3>
+    <h3>Email: {{dbpassword}}</h3>
+</div>
+
+<div  *ngIf="dataShowStatus" class="container m-5 p-5 bg-warning">
+    <h3 class="text-center m-4">User Details</h3>
+    <table class="border border-2 border-dark">
+        <thead>
+            <tr class="border border-2 border-dark">
+                <th class="border border-2 border-dark">Id</th>
+                <th class="border border-2 border-dark">Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of userDetails; let i=index">
+                <th class="border border-2 border-dark">{{i+1}}</th>
+                <th class="border border-2 border-dark">{{data.username}}</th>
+                <th class="border border-2 border-dark">{{data.age}}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="text-center m-5 ">
+    <button (click)="dataShow()" class="btn btn-primary p-4">Show the UserDetails</button>
+</div>
+
+<div [ngSwitch]="status">
+    <p *ngSwitchCase="'Success'">Task Was Successfull... </p>
+    <p *ngSwitchCase="'Failure'">Task Was Failure... </p>
+    <p *ngSwitchCase="'Pending'">Task Was Pending...</p>
+</div>
